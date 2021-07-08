@@ -6,7 +6,6 @@ Library             Collections
 
 *** Variables ***
 ${SEARCH_FILE}      workbook.xlsx
-${IT_EMAIL}         jotain@jotain.com
 ${row_count}        2
 ${firstVisitYoutube}    on eka
 
@@ -53,15 +52,6 @@ Open Browser And Go To Page
     ${webelement}=      Get WebElement      xpath=//button//div[contains(text(), 'I agree')]
     Log     ${webelement}
     Click Element       ${webelement}
-
-#Send Outlook Message To IT Support
-#    ${ATTACHMENTS}=     Create List     ${SEARCH_FILE}
-#    RPA.Outlook.Application.Open Application
-#    Send Message       recipients=${IT_EMAIL}
-#    ...                subject=Process Failed
-#    ...                body=Task run failed, attaching excel for your convenience, also check log file on computer for detailed report.
-#    ...                attachments=${ATTACHMENTS}
-#    RPA.Outlook.Application.Quit Application
 
 Get row count in the sheet
     [Arguments]      ${SHEET_NAME}
